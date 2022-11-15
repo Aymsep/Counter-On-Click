@@ -1,0 +1,14 @@
+*{
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+.counter-container {
+  height: 100vh;
+  flex-direction: column;
+  border: 1px solid red;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
