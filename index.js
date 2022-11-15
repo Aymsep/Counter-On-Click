@@ -1,21 +1,63 @@
-const btn = document.querySelector('#btn')
-const reset = document.querySelector('#reset')
-const msg = document.querySelector('.msg')
-btn.addEventListener('click', changebg)
-function changebg(e) {
-    let bg_1 = Math.floor(Math.random()* 255)  
-    let bg_2 = Math.floor(Math.random()* 255)
-    let bg_3 = Math.floor(Math.random()* 255)
-    let hex = bg_1.toString(16)+ bg_2.toString(16)+bg_3.toString(16)
-    document.querySelector('div').style.backgroundColor = `#${hex}`
-    msg.innerHTML = `<h1>${hex}</h1>`
-    msg.style.backgroundColor = `${hex}`
-    console.log(hex)
+//declaring variables
+const decrease = document.querySelector('#Decrease')
+const increase = document.querySelector('#Increase')
+const reset = document.querySelector('#Reset')
+const count = document.querySelector('.Count')
+
+//score to display in div.Count
+let score = 0 
+
+/*when click button increase*/ 
+increase.addEventListener('click', onincrease)
+
+/*when increase button clicked , this function will execute the increment*/ 
+function onincrease() {
+
+    // increase score by 1 in div.Count
+    count.innerHTML = score += 1 ; 
+
+    // for number greater than 0 take color green,and if score = 0 color white
+    if(score > 0 ){
+        count.style.color ='green'
+    }else if (score == 0){
+    count.style.color ='white'
+    }
+}
+// end of increase function
+
+
+
+// when click button decrease 
+decrease.addEventListener('click', ondecrease)
+
+// when decrease button clicked , this function will execute the decrease
+function ondecrease() {
+
+    // decrease score by 1 in div.Count
+    count.innerHTML = score -= 1;
+
+    // for number smaller than 0 take color red, and if score = 0 color white
+    if(score < 0){
+        count.style.color ='red'
+    }else if(score == 0){
+    count.style.color ='white'
+
+    }
 }
 
-reset.addEventListener('click', resetbg)
-function resetbg(){
-    document.querySelector('div').style.backgroundColor = ``
-    console.clear()
-    msg.innerHTML = ''
+
+// when click button reset
+reset.addEventListener('click', onreset)
+
+// when reset button clicked , this function will execute the reset
+function onreset() {
+
+    /*reset score to 0 in div.Count*/ 
+    count.innerHTML = score = 0 ;
+
+    /*number color to white */
+    count.style.color ='white'
 }
+
+
+/*end of javascript*/ 
