@@ -63,13 +63,17 @@ input[type="button"]:first-of-type{
 /* on click change background color for all buttons */
 input[type="button"]:active{
   background-color:rgb(71, 118, 248);
-  color: white;
 }
 
 /* decrease button */
 input[type="button"]:last-of-type{
   background-color:rgb(233, 1, 1);
   color: white;
+}
+
+/*reset button*/
+input[type="button"]:nth-child(2){
+  background-color:white;
 }
 
 
